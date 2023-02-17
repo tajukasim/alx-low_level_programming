@@ -9,7 +9,6 @@
 int main(void)
 {
 	char chLower = 'a';
-	char chUpper = 'A';
 
 	for (chLower = 'a'; chLower <= 'z'; chLower++)
 	{

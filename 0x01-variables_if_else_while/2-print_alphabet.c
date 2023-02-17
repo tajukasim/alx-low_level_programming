@@ -14,6 +14,5 @@ int main(void)
 	{
 		putchar(chLower);
 	}
-	putchar('\n');
 	return (0);
 }

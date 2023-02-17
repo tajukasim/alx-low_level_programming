@@ -1,34 +1,23 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <string.h>
 
 /**
- * main - Prints all single digit numbers of base 10
+ * main - Prints lower and uppercase alphabets
  * Return: Always 0 (success)
  */
 
 int main(void)
 {
-	int a, b, c;
+	char chLower = 'a';
+	char chUpper = 'A';
 
-	for (a = '0'; a < '9'; a++)
+	for (chLower = 'a'; chLower <= 'z'; chLower++)
 	{
-	for (b = a + 1; b <= '9'; b++)
-	{
-	for (c = b + 1; c <= '9'; c++)
-	{
-	if ((a != b) != c)
-	{
-	putchar(a);
-	putchar(b);
-	putchar(c);
-	if (a == '7' && b == '8')
-	continue;
-	putchar(',');
-	putchar(' ');
+		putchar(chLower);
 	}
-	}
-	}
+	for (chUpper = 'A'; chUpper <= 'Z'; chUpper++)
+	{
+		putchar(chUpper);
 	}
 	putchar('\n');
 	return (0);

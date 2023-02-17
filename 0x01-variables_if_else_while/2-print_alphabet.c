@@ -13,11 +13,11 @@ int main(void)
 
 	for (chLower = 'a'; chLower <= 'z'; chLower++)
 	{
-		putchar(chLower, '\n');
+		putchar(chLower);
 	}
 	for (chUpper = 'A'; chUpper <= 'Z'; chUpper++)
 	{
-		putchar(chUpper, '\n');
+		putchar(chUpper);
 	}
 	return (0);
 }

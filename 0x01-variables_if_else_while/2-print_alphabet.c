@@ -17,7 +17,7 @@ int main(void)
 	}
 	for (chUpper = 'A'; chUpper <= 'Z'; chUpper++)
 	{
-	putchar(chUpper);
+		putchar(chUpper);
 	}
 	putchar('\n');
 	return (0);

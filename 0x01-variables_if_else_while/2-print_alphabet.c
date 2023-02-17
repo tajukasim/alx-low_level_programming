@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <string.h>
-
 /**
- * main - Prints lower and uppercase alphabets
+ * main - Prints lowercase alphabets
  * Return: Always 0 (success)
- */
+*/
 
 int main(void)
 {
-	char chLower = 'a';
+	char ch = 'a';
 
-	for (chLower = 'a'; chLower <= 'z'; chLower++)
+	for (ch = 'a'; ch <= 'z'; ch++)
 	{
-		putchar(chLower);
+		putchar(ch);
 	}
+	putchar('\n');
 	return (0);
 }

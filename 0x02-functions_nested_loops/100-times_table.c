@@ -1,22 +1,51 @@
-#include "main.h"
-#include<stdio.h>
+#include "holberton.h"
+
 /**
- * print_times_table - Entry point
- * @n: input
- * Return: Always 0 (Success)
- */
+  * print_times_table - Prints a multiplication table up to param
+  * @n: The number to be treated
+  *
+  * Return: Number matrix
+  */
 void print_times_table(int n)
 {
-	int i, j;
+	int x, y, z;
 
-	for (i = 0; i <= n; i++)
+	if (n >= 0 && n <= 14)
 	{
-		for (j = 0; j <= n; j++)
+		for (x = 0; x <= n; x++)
 		{
-			printf("%d", j*i);
-			printf(", ");
+			for (y = 0; y <= n; y++)
+			{
+				z = x * y;
+				if (z > 99)
+				{
+					_putchar(',');
+					_putchar(32);
+					_putchar((z / 100) + '0');
+					_putchar(((z / 10) % 10) + '0');
+					_putchar((z % 10) + '0');
+				}
+				else if (z > 9)
+				{
+					_putchar(',');
+					_putchar(32);
+					_putchar(32);
+					_putchar(((z / 10) % 10) + '0');
+					_putchar((z % 10) + '0');
+				}
+				else
+				{
+					if (y != 0)
+					{
+						_putchar(',');
+						_putchar(32);
+						_putchar(32);
+						_putchar(32);
+					}
+					_putchar(z + '0');
+				}
+			}
+			_putchar('\n');
 		}
-		printf("\n");
 	}
-	return (0);
 }

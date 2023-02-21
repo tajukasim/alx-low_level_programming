@@ -1,4 +1,4 @@
-#include <main.h>
+#include <unistd>
 
 /**
  *this func. is used later on other func. as lib.

@@ -1,20 +1,29 @@
 #include "main.h"
+
 /**
- * _memcpy - Copies memory area
+ * _strncat - Write a function that concatenates two strings. it will use at
+ *            most n bytes from src
  *
- * @dest: where to copy the memory to
- * @n: the number of bytes
- * @src: the memory area to copy from
+ * @dest: This is the output  dest
+ * @src: This is the input src
+ * @n: This is the number bytes fro src
  *
- * Return: a pointer to @dest
+ * Return: This is my return
  */
-
-char *_memcpy(char *dest, char *src, unsigned int n)
+char *_strncat(char *dest, char *src, int n)
 {
-	unsigned int i;
+	int index, count;
 
-	for (i = 0; i < n; i++)
-		dest[i] = src[i];
-
+	for (index = 0; dest[index] != '\0'; index++)
+		;
+	for (count = 0; count < n && src[count] != '\0'; count++)
+	{
+		dest[index] = src[count];
+		index++;
+	}
+	if (count < n)
+	{
+	dest[index] = '\0';
+	}
 	return (dest);
 }

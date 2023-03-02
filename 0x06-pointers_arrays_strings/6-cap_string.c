@@ -1,34 +1,25 @@
-#include "main.h"
+#include "holberton.h"
 /**
- * cap_string - Write a function that capitalizes all words of a string.
- *
- * @entry: This is the input string
- *
- * Return: String capitalized
+ * cap_string - description
+ * @s: descript
+ * Return: j
  */
-char *cap_string(char *entry)
+char *cap_string(char *s)
 {
-	int conversion, index, count;
-
-	char chars[] = {' ', ',', ';', '.', '!',
-			 '?', '"', '(', ')', '{', '}',  '\t', '\n', '\0'};
-	conversion = 32;
-
-	for (index = 0; entry[index] != '\0'; index++)
-	{
-		if (entry[index] >= 'index' && entry[index] <= 'z')
-		{
-			entry[index] =  entry[index] - conversion;
-		}
-		conversion = 0;
-		for (count = 0; chars[count] != '\0'; count++)
-		{
-			if (chars[count] == entry[index])
-			{
-				conversion = 32;
-				break;
-			}
-		}
-	}
-	return (entry);
+int i = 0, c;
+while (s[i] != 0)
+{
+c = s[i];
+if (i == 0 && c >= 'a' && c <= 'z')
+s[i] -= 32;
+if ((c == 44 || c == 59 || c == 46 || c == 33 || c == 63 ||
+c == 34 || c == 40 || c == 41 || c == 123 ||
+c == 125 || c == '\t' || c == 32 || c == '\n')
+&& (s[i + 1] >= 'a' && s[i + 1] <= 'z'))
+{
+s[i + 1] -= 32;
+}
+i++;
+}
+return (s);
 }

@@ -1,32 +1,29 @@
-// C program to implement
-// the above approach
 #include "main.h"
+#include <stdlib.h>
 
+/**
+ * read_textfile- Read text file print to STDOUT.
+ * @filename: text file being read
+ * @letters: number of letters to be read
+ * Return: w- actual number of bytes read and printed
+ *        0 when function fails or filename is NULL.
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-    FILE* ptr;
-    char ch;
- 
-    // Opening file in reading mode
-    ptr = fopen(*filename, "r");
- 
-    if (NULL == ptr) {
-        _putchar("file can't be opened \n");
-    }
- 
-    // Printing what is written in file
-    // character by character using loop.
-    do {
-        ch = fgetc(ptr);
-        _putchar(ch);
- 
-        // Checking if character is not EOF.
-        // If it is EOF stop reading.
-    } while (ch != EOF);
- 
-    // Closing the file
-    fclose(ptr);
-    return 0;
-}
+        char *buf;
+        ssize_t fp;
+        ssize_t wri;
+        ssize_t tt;
+        
+        fp = open(filename, O_RDONLY);
+        if (fp == -1)
+                return (0);
+        buf = malloc(sizeof(char) * letters);
+        tt = read(fp, buf, letters);
+        wri = write(STDOUT_FILENO, buf, tt);
 
+        free(buf);
+        close(fp);
+        return (wri);
+}
 
